@@ -4,11 +4,11 @@ const app = express();
 
 const mongoose = require("mongoose");
 
-const Article = require("./models/Article");
+const Article = require("./models/Article.js");
 
 //mongodb+srv://belkardaothmane05:<password>@cluster0.1l2p35k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0;
 
-mongoose.connect("mongodb+srv://capucine:capucine12025@capucine.yswq5.mongodb.net/?retryWrites=true&w=majority&appName=capucine")
+mongoose.connect("mongodb+srv://belkardaothmane05:4954ktbmyqlhsdxe@cluster0.1l2p35k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 .then(()=>{
 console.log("connected succesfully");
 
@@ -31,7 +31,7 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 
-app.post("/article", async(req,res)=>{
+app.post("/articles", async(req,res)=>{
     const newArticle = new Article();
     const ParentLastName = req.body.ParentLastName ;
     const ParentFirstName = req.body.ParentFirstName ;
@@ -56,7 +56,7 @@ app.post("/article", async(req,res)=>{
 app.get("/article",async(req,res)=>{
   try{ 
    //   const article = await Article.findById(id);
-   const article=await Article.find();
+   const article = await Article.find();
     res.json(article);
     console.log("the article is",article);
     } 
