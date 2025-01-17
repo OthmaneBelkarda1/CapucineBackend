@@ -8,12 +8,12 @@ const Article = require("./models/Article.js");
 
 //mongodb+srv://belkardaothmane05:<password>@cluster0.1l2p35k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0;
 
-mongoose.connect("mongodb+srv://belkardaothmane05:4954ktbmyqlhsdxe@cluster0.1l2p35k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+mongoose.connect("mongodb+srv://belkardaothmane05:Othmane&2005@cluster0.1l2p35k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 .then(()=>{
 console.log("connected succesfully");
 
 }).catch((error)=>{
-    console.log("error with connecting with data base");
+    console.log("error with connecting with data base",error);
 });
 
 
